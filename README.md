@@ -2,6 +2,11 @@
 
 A modern, high-performance web application built with cutting-edge technologies to demonstrate full-stack development expertise and best practices in frontend architecture.
 
+
+
+<img width="1920" height="970" alt="{D7169690-A836-49E8-87B7-1BE356B88E5B}" src="https://github.com/user-attachments/assets/6de1964c-2980-4ce3-9d1f-f5f1b6de9951" />
+
+
 ## 🎯 Project Overview
 
 VECXA is a showcase project designed to highlight proficiency in modern web development practices. It serves as a foundation for scalable, maintainable applications while demonstrating mastery of industry-standard tools and methodologies.
