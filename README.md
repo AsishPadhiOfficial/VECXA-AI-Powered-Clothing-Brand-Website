@@ -135,12 +135,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This project demonstrates proficiency in modern frontend development practices and serves as a foundation for building scalable web applications. It showcases attention to detail, code quality, and understanding of current industry standards.
 
 ---
-
-⭐ If this project helped you or you found it interesting, please consider giving it a star!
-
-## 📞 Connect
-
-- 💼 [LinkedIn](https://linkedin.com/in/yourprofile)
-- 🐙 [GitHub](https://github.com/yourusername)
-- 📧 [Email](mailto:your.email@example.com)
-- 🌐 [Portfolio](https://yourportfolio.com)
