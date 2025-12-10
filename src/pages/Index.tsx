@@ -1,6 +1,7 @@
 
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
+import AnalyticsShowcase from '@/components/AnalyticsShowcase';
 import Features from '@/components/Features';
 import Projects from '@/components/Projects';
 import WhyVecxa from '@/components/WhyVecxa';
@@ -27,6 +28,7 @@ const Index = () => {
         keywords={['smart textiles', 'wearable technology', 'textile sensors', 'sports tech', 'safety monitoring', 'performance analytics', 'manufacturing']}
       />
       <Hero />
+      <AnalyticsShowcase />
       <Features />
       <WhyVecxa />
       <Projects />

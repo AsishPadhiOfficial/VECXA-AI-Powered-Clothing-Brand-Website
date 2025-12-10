@@ -1,14 +1,16 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { useCart } from '@/contexts/CartContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +62,13 @@ const Navbar = () => {
                   <Link to="/">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
                       Home
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link to="/shop">
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
+                      Shop
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -146,6 +155,14 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
+                  <Link to="/account">
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
+                      Account
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
                   <Link to="/careers">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
                       Careers
@@ -160,6 +177,25 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+          </div>
+
+          {/* Desktop Cart */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              to="/cart"
+              className={cn(
+                "relative inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                isScrolled ? "bg-gray-100 text-gray-800 hover:bg-gray-200" : "bg-gray-800 text-white hover:bg-gray-700"
+              )}
+            >
+              <ShoppingBag className="w-4 h-4 mr-2" />
+              Cart
+              {totalItems > 0 && (
+                <span className="ml-2 inline-flex items-center justify-center rounded-full bg-gray-900 text-white text-xs w-6 h-6">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -179,6 +215,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}>
             Home
+          </Link>
+          
+          <Link to="/shop" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
+            setIsMenuOpen(false);
+            window.scrollTo(0, 0);
+          }}>
+            Shop
           </Link>
           
           <Link to="/about" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
@@ -216,6 +259,21 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}>
             Careers
+          </Link>
+
+          <Link to="/account" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
+            setIsMenuOpen(false);
+            window.scrollTo(0, 0);
+          }}>
+            Account
+          </Link>
+
+          <Link to="/cart" className={cn("flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium", isScrolled ? "text-gray-800 bg-gray-100 hover:bg-gray-200" : "text-white bg-gray-800 hover:bg-gray-700")} onClick={() => {
+            setIsMenuOpen(false);
+            window.scrollTo(0, 0);
+          }}>
+            <ShoppingBag className="w-4 h-4" />
+            Cart {totalItems > 0 ? `(${totalItems})` : ""}
           </Link>
           
           <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 bg-gray-200 hover:bg-gray-300" : "text-white bg-gray-700 hover:bg-gray-600")}>
