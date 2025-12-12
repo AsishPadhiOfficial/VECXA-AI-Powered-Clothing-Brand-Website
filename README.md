@@ -4,7 +4,8 @@
 
 A modern, high-performance web application built with cutting-edge technologies to demonstrate full-stack development expertise and best practices in frontend architecture.
 
-<img width="1920" height="970" alt="VECXA Preview" src="https://github.com/user-attachments/assets/6de1964c-2980-4ce3-9d1f-f5f1b6de9951" />
+<img width="1919" height="874" alt="image" src="https://github.com/user-attachments/assets/e67c774a-17aa-4213-9534-52e59117c598" />
+
 
 ## 🎯 Project Overview
 
